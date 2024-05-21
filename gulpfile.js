@@ -8,8 +8,6 @@ import { scripts } from "./gulp/tasks/scripts.js"
 import { images } from "./gulp/tasks/images.js"
 import { resources } from "./gulp/tasks/resources.js"
 import { htmlInclude } from "./gulp/tasks/html-include.js"
-import { cacheTask } from "./gulp/tasks/cache.js"
-import { rewrite } from "./gulp/tasks/rewrite.js"
 
 global.app = {
   gulp,
@@ -36,8 +34,7 @@ const watcher = () => {
 
 const dev = gulp.series(clean, htmlInclude, scripts, styles, images, resources, watcher)
 const build = gulp.series(clean, htmlInclude, scripts, styles, images, resources)
-const cache = gulp.series(cacheTask, rewrite)
 
-export { dev, build, cache }
+export { dev, build }
 
 gulp.task("default", dev)
