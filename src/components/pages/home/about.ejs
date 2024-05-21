@@ -1,0 +1,20 @@
+<%
+  const components = {
+    button: "../../base/button.ejs"
+  }
+%>
+
+<section class="section-about">
+  <div class="container">
+    <h1 class="title">About</h1>
+    <!-- Navigation -->
+    <div class="section-about__navigation">
+      <!-- Link to home -->
+      <%- include(components.button, { href: `${basePath}index.html`, text: 'Home' }) %>
+      <!-- Link to profile -->
+      <%- include(components.button, { href: `${basePath}profile/index.html`, text: 'Profile' }) %>
+      <!-- Link to settings -->
+      <%- include(components.button, { href: `${basePath}profile/settings/index.html`, text: 'Profile Settings' }) %>
+    </div>
+  </div>
+</section>

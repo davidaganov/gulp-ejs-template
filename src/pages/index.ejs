@@ -1,0 +1,11 @@
+<%
+  const meta = {
+    title: "Главная страница",
+    basePath: ""
+  }
+
+  const layout = "../layouts/default.ejs"
+  const page = "../components/pages/home/index.ejs"
+%>
+
+<%- include(layout, { body: include(page, { basePath: meta.basePath }), ...meta }) %>

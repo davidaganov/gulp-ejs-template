@@ -1,0 +1,29 @@
+<%
+  const sections = {
+    head: "../components/general/head.ejs",
+    header: "../components/general/header.ejs",
+    footer: "../components/general/footer.ejs"
+  }
+
+  const meta = {
+    title: typeof title != "undefined" ? `${title} — Сайт`: "Страница — Сайт",
+    basePath: typeof basePath != "undefined" ? basePath : ""
+  }
+%>
+
+<!doctype html>
+<html lang="ru">
+  <%- include(sections.head, { title: meta.title, basePath: meta.basePath }) %>
+  <body>
+    <%- include(sections.header, { basePath: meta.basePath }) %>
+
+    <main><%- body %></main>
+
+    <%- include(sections.footer, { basePath: meta.basePath }) %>
+
+    <script
+      type="module"
+      src="<%= meta.basePath %>assets/script/main.js"
+    ></script>
+  </body>
+</html>

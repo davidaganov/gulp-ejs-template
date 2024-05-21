@@ -1,0 +1,13 @@
+<%
+  const sections = [
+    {
+      title: "Section About",
+      path: "about.ejs"
+    }
+  ];
+%>
+
+<% sections.forEach(section => { %>
+<!-- <%= section.title %> -->
+<%- include(section.path) %>
+<% }); %>

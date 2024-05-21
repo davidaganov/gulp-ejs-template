@@ -1,0 +1,29 @@
+<%
+  const button = {
+    type: typeof type != "undefined" ? `btn--${type}` : "btn--primary",
+    href: typeof href != "undefined" ? href : null,
+    nativeType: typeof nativeType != "undefined" ? nativeType : "button",
+    className: typeof className != "undefined" ? ` ${className}` : "",
+    text: typeof text != "undefined" ? text : ""
+  }
+
+  const classes = `btn ${button.type}${button.className}`
+%>
+
+<% if (button.href && button.nativeType === "button") { %>
+<a
+  href="<%- button.href %>"
+  class="<%- classes %>"
+>
+  <%- button.text %>
+  <%- button.icon %>
+</a>
+<% } else { %>
+<button
+  type="<%- button.nativeType %>"
+  class="<%- classes %>"
+>
+  <%- button.text %>
+  <%- button.icon %>
+</button>
+<% } %>
